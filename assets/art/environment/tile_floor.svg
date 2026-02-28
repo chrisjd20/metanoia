@@ -1,0 +1,5 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+    <!-- Floor Tile Placeholder (Gray) -->
+    <rect width="64" height="64" fill="#3D3D3D"/>
+    <rect x="2" y="2" width="60" height="60" fill="#4D4D4D"/>
+</svg>

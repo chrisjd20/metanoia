@@ -1,0 +1,5 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+    <!-- Wall Tile Placeholder (Black/Dark) -->
+    <rect width="64" height="64" fill="#1D1D1D"/>
+    <rect x="4" y="4" width="56" height="56" fill="#2D2D2D"/>
+</svg>
