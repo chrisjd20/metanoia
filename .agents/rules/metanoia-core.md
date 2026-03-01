@@ -11,7 +11,9 @@ trigger: always_on
 - **Rendering**: GL Compatibility (Mobile/WebGL targets).
 - **Physics**: Jolt Physics Engine, 2D layers: Player, Enemies, Projectiles, Environment, Interactables, Triggers.
 - **Input**: Virtual joysticks over touch, allowing touch-from-mouse/mouse-from-touch emulation.
-- **Exports**: Android, iOS, and WebGL environments are targeted.
+- **Exports**: Android, iOS, and WebGL environments are targeted
+- **Development Plan Document** - Can be found in `docs/Metanoia-Implementation-Plan.md` (has our phases of implementation in it).
+
 
 ## UI Layout & Resolution Independence
 - **CRITICAL**: Because mobile devices are incredibly varied in aspect ratio and resolution, NEVER use hardcoded pixel offsets (e.g., `offset_left = -150.0`) to position UI elements loosely on the screen.

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c8s7w0h2r3v4b"]
 
-[ext_resource type="Script" path="res://scripts/menus/TitleScreen.gd" id="1_ts"]
+[ext_resource type="Script" uid="uid://c5xhid2lwcs1k" path="res://scripts/menus/TitleScreen.gd" id="1_ts"]
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" unique_id=108008282]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ts")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=495366254]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Logo" type="TextureRect" parent="."]
+[node name="Logo" type="TextureRect" parent="." unique_id=545896464]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -34,7 +34,7 @@ grow_horizontal = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TaglineLabel" type="Label" parent="."]
+[node name="TaglineLabel" type="Label" parent="." unique_id=1077639670]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -47,7 +47,7 @@ grow_horizontal = 2
 text = "Put on the whole armor of God."
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1635690272]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -62,29 +62,29 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="NewGameButton" type="Button" parent="VBoxContainer"]
+[node name="NewGameButton" type="Button" parent="VBoxContainer" unique_id=640069425]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "New Game"
 
-[node name="ContinueButton" type="Button" parent="VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="VBoxContainer" unique_id=1146648075]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Continue"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=81540233]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Settings"
 
-[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=1526827169]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=603571290]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Quit"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1195362749]

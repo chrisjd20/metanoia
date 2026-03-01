@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprite Sheet Editor</title>
+    <meta name="description"
+        content="Upload, edit, and optimize sprite sheets with frame selection and animation preview">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Sidebar Controls -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <h1>🎮 Sprite Editor</h1>
+                <p class="subtitle">Upload · Select · Export</p>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">Upload Sprite Sheet</label>
+                <div id="drop-zone" class="drop-zone">
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                    <div class="drop-zone-content">
+                        <span class="drop-icon">📁</span>
+                        <span class="drop-text">Drop image here or click to browse</span>
+                    </div>
+                </div>
+                <div id="file-info" class="file-info hidden"></div>
+            </div>
+
+            <div id="controls-panel" class="controls-panel hidden">
+                <div class="control-group">
+                    <label class="control-label">Grid Configuration</label>
+                    <div class="grid-inputs">
+                        <div class="input-wrapper">
+                            <label for="cols-input">Columns</label>
+                            <input type="number" id="cols-input" min="1" max="64" value="1">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="rows-input">Rows</label>
+                            <input type="number" id="rows-input" min="1" max="64" value="1">
+                        </div>
+                    </div>
+                    <div id="frame-dimensions" class="frame-dimensions"></div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Animation Mode</label>
+                    <div class="mode-buttons">
+                        <button id="mode-loop" class="mode-btn active" data-mode="loop">🔁 Loop</button>
+                        <button id="mode-noloop" class="mode-btn" data-mode="noloop">▶️ Once</button>
+                        <button id="mode-yoyo" class="mode-btn" data-mode="yoyo">🔄 Yoyo</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Frame Rate</label>
+                    <div class="fps-control">
+                        <input type="range" id="fps-slider" min="1" max="60" value="12">
+                        <span id="fps-value">12 FPS</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Playback</label>
+                    <div class="playback-buttons">
+                        <button id="play-btn" class="action-btn play-btn">▶ Play</button>
+                        <button id="pause-btn" class="action-btn pause-btn">⏸ Pause</button>
+                        <button id="stop-btn" class="action-btn stop-btn">⏹ Stop</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Frame Selection</label>
+                    <div class="selection-buttons">
+                        <button id="select-all" class="small-btn">Select All</button>
+                        <button id="deselect-all" class="small-btn">Deselect All</button>
+                    </div>
+                    <div class="input-wrapper range-input-wrapper">
+                        <input type="text" id="frame-range-input" placeholder="e.g. 1-5, 8, 11-15">
+                    </div>
+                    <div id="selection-count" class="selection-count">0 / 0 frames selected</div>
+                </div>
+
+                <div class="control-group">
+                    <button id="download-btn" class="download-btn" disabled>
+                        <span class="download-icon">⬇️</span>
+                        <span>Export Sprite Sheet</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <div id="empty-state" class="empty-state">
+                <div class="empty-icon">🖼️</div>
+                <h2>No Sprite Sheet Loaded</h2>
+                <p>Upload a sprite sheet image to get started</p>
+            </div>
+
+            <div id="editor-view" class="editor-view hidden">
+
+                <!-- Warning Banner -->
+                <div id="grid-warning" class="warning-banner hidden">
+                    ⚠️ <strong>ACTION REQUIRED:</strong> You must configure <em>Columns</em> and <em>Rows</em> in the
+                    left sidebar to slice your sprite sheet. Otherwise, the entire image is treated as a single frame!
+                </div>
+
+                <!-- Preview Section -->
+                <section id="preview-section" class="preview-section">
+                    <h2 class="section-title">Animation Preview</h2>
+                    <div id="phaser-container" class="phaser-container"></div>
+
+                    <div class="range-slider-container hidden" id="range-slider-container">
+                        <div class="range-slider-track" id="range-slider-track"></div>
+                        <div id="playhead-tracker" class="playhead-tracker hidden">
+                            <span id="playhead-label">0</span>
+                        </div>
+                        <input type="range" id="range-slider-min" class="range-slider" min="0" max="0" value="0">
+                        <input type="range" id="range-slider-max" class="range-slider" min="0" max="0" value="0">
+                        <div class="range-slider-values">
+                            <span id="range-val-min">0</span>
+                            <span id="range-val-max">0</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Frame Grid -->
+                <section id="frames-section" class="frames-section">
+                    <h2 class="section-title">Frames <span id="frame-count-badge" class="badge"></span></h2>
+                    <div id="frame-grid" class="frame-grid"></div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
