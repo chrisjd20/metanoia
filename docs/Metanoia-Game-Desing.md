@@ -36,7 +36,7 @@ These are the non-negotiable principles that every feature must serve:
 
 ### Style
 
-**Gothic Catholic** — heavy ink lines, deep shadows, stained-glass color palettes, and architectural motifs drawn from medieval cathedrals, illuminated manuscripts, and Baroque religious art. Think *Darkest Dungeon* meets stained glass windows.
+**Modern Gothic Catholic** — heavy ink lines, deep shadows, stained-glass color palettes, and architectural motifs drawn from medieval cathedrals, illuminated manuscripts, and Baroque religious art, but applied to a strictly modern setting. Think *Darkest Dungeon* meets stained glass windows, depicting modern clothing, skyscrapers, subways, and neon signs. While the rendering is ancient and sacred, the subject matter is exactly our modern times.
 
 ### The Two Layers of Reality
 
@@ -44,11 +44,11 @@ The single most striking visual feature of Metanoia is **The Veil** — the game
 
 **The Mundane Layer (Prologue Only):**
 - Desaturated, almost grayscale palette with muted earth tones.
-- The city looks like any slightly depressed modern metropolis. No visible enemies. NPCs look tired and blank.
+- The city looks like any slightly depressed modern metropolis. No visible enemies. NPCs look tired and blank, dressed in standard contemporary clothing.
 - The player character moves sluggishly. Controls feel slightly unresponsive — you are spiritually asleep.
 
 **The Spiritual Layer (Post-Baptism / The Game Proper):**
-- The Gothic palette explodes into life. Deep crimsons, golds, midnight blues, sickly greens for corruption, and radiant whites for sanctified areas.
+- The Gothic palette explodes into life. Deep crimsons, golds, midnight blues, sickly greens for corruption, and radiant whites for sanctified areas. The modern city infrastructure (cars, streetlamps, billboards) adopts thick medieval ink lines and stained-glass lighting.
 - Demonic webs stretch between buildings. Shadowy chains drag people down. Demons swarm the streets.
 - Freed/sanctified areas glow with warm candlelight tones, stained-glass refractions, and faint choral ambience.
 - The UI becomes ornate — the Grace bar is a golden chalice, the Fervor meter is a glowing censer, and ability icons are illuminated manuscript illustrations.
@@ -61,7 +61,7 @@ The single most striking visual feature of Metanoia is **The Veil** — the game
 
 ### Premise
 
-The Pilgrim is an ordinary person living in **Caelum Falls**, a modern metropolis under the dominion of seven Archdemons corresponding to the Seven Deadly Sins. These Archdemons have divided the city into territories, each warping the culture and people of their district to feed their respective sin.
+The Pilgrim is an ordinary person (wearing modern street clothes that remain throughout the game) living in **Caelum Falls**, a modern metropolis under the dominion of seven Archdemons corresponding to the Seven Deadly Sins. These Archdemons have divided the city into territories, each warping the culture and people of their district to feed their respective sin.
 
 Through a providential encounter with **Father Elias** in a crumbling church on the outskirts, the Pilgrim receives Baptism. The Veil is torn. The spiritual war becomes visible.
 

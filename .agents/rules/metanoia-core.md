@@ -7,11 +7,17 @@ trigger: always_on
 
 # Project Setup
 - **Engine**: Godot 4.x
-- **Resolution**: 1080x1920 (Portrait), Canvas Items Stretch, Expand Aspect.
+- **Resolution**: 1280x720 (Landscape 16:9 base), Canvas Items Stretch, Expand Aspect. The game targets wide-screen mobile play.
 - **Rendering**: GL Compatibility (Mobile/WebGL targets).
 - **Physics**: Jolt Physics Engine, 2D layers: Player, Enemies, Projectiles, Environment, Interactables, Triggers.
 - **Input**: Virtual joysticks over touch, allowing touch-from-mouse/mouse-from-touch emulation.
 - **Exports**: Android, iOS, and WebGL environments are targeted.
+
+## UI Layout & Resolution Independence
+- **CRITICAL**: Because mobile devices are incredibly varied in aspect ratio and resolution, NEVER use hardcoded pixel offsets (e.g., `offset_left = -150.0`) to position UI elements loosely on the screen.
+- ALWAYS use Godot's built-in **Anchor Presets** (e.g., `PRESET_CENTER` (8), `PRESET_FULL_RECT` (15)) so UI elements stay properly rooted proportional to the screen size.
+- For centering groups of buttons or text, use `VBoxContainer` or `HBoxContainer` wrapped inside a correctly anchored `Control` node or `MarginContainer`.
+- Background images (`TextureRect`) should always use `layout_mode = 1` (anchors), `expand_mode = 1` (Ignore Size), and `stretch_mode = 6` (Keep Aspect Covered) so they dynamically fill all gaps on ultrawide or tall displays without distorting the art.
 
 ## AI & MCP Integration
 - Cursor and Antigravity have access to the Model Context Protocol (MCP) via `godot-mcp`.

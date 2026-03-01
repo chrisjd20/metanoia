@@ -80,43 +80,50 @@ res://
 > The first thing the player sees. Must be functional before gameplay development begins.
 
 ### 1.1 Title Screen Scene
-- [ ] **Background**: Animated scene — the silhouette of Caelum Falls skyline, dark and foreboding. Faint demonic shapes drift across buildings. A single church steeple glows faintly on the outskirts (the Parish). Slow pan or parallax layers.
-- [ ] **Title Treatment**: "METANOIA" in Gothic letterform, gold on dark. Subtle glow/shimmer animation. Tagline beneath: *"Put on the whole armor of God."* — Ephesians 6:11
-- [ ] **Ambient Audio**: Low, ominous choral drone transitioning to a faint Gregorian chant melody. Sets tone immediately.
-- [ ] **Menu Options** (appear after brief title animation):
-  - **New Game** — starts Baptism prologue
+- [x] **Background**: Animated scene — the silhouette of Caelum Falls skyline, dark and foreboding. Faint demonic shapes drift across buildings. A single church steeple glows faintly on the outskirts (the Parish). Slow pan or parallax layers.
+- [x] **Title Treatment**: "METANOIA" in Gothic letterform, gold on dark. Subtle glow/shimmer animation. Tagline beneath: *"Put on the whole armor of God."*
+- [x] **Ambient Audio**: Low, ominous choral drone transitioning to a faint Gregorian chant melody. Sets tone immediately.
+- [x] **Menu Options** (appear after brief title animation):
+  - **New Game** — transitions to Character Selection Screen
   - **Continue** — loads last save (greyed out if no save exists)
   - **Settings** — opens settings submenu
   - **Credits** — scrolling credits
   - **Quit** — exit game (hidden on mobile/WebGL)
-- [ ] Touch/click/key input to dismiss any intro animation and go straight to menu
+- [x] Touch/click/key input to dismiss any intro animation and go straight to menu
 
 ### 1.2 Settings Menu
-- [ ] **Audio**: Master volume, Music volume, SFX volume (sliders)
-- [ ] **Display**: Fullscreen toggle (desktop/WebGL), screen shake intensity
-- [ ] **Controls**: Virtual joystick size/opacity (mobile), keybind display (desktop)
-- [ ] **Language**: Placeholder for future localization
-- [ ] **Back** button returns to title screen
-- [ ] Settings persist via `SaveManager`
+- [x] **Audio**: Master volume, Music volume, SFX volume (sliders)
+- [x] **Display**: Fullscreen toggle (desktop/WebGL), screen shake intensity
+- [x] **Controls**: Virtual joystick size/opacity (mobile), keybind display (desktop)
+- [x] **Language**: Placeholder for future localization
+- [x] **Back** button returns to title screen
+- [x] Settings persist via `SaveManager`
 
 ### 1.3 Pause Menu (In-Game)
-- [ ] **Resume**
-- [ ] **Settings** (same submenu)
-- [ ] **Return to Title** (with confirmation prompt — "Progress since last checkpoint will be lost.")
-- [ ] Triggered by pause button / ESC / back gesture
-- [ ] Dims/blurs gameplay behind it
+- [x] **Resume**
+- [x] **Settings** (same submenu)
+- [x] **Return to Title** (with confirmation prompt — "Progress since last checkpoint will be lost.")
+- [x] Triggered by pause button / ESC / back gesture
+- [x] Dims/blurs gameplay behind it
 
 ### 1.4 Game Over / Death Screen
-- [ ] Screen desaturates per design doc (Mortal Sin)
-- [ ] Tempter Demon mocking line displayed
-- [ ] Fade to black
-- [ ] "Absolution" prompt — tap/click to respawn at last Priest Checkpoint
-- [ ] Brief absolution animation on respawn
+- [x] Screen desaturates per design doc (Mortal Sin)
+- [x] Tempter Demon mocking line displayed
+- [x] Fade to black
+- [x] "Absolution" prompt — tap/click to respawn at last Priest Checkpoint
+- [x] Brief absolution animation on respawn
 
-### 1.5 Scene Transition System
-- [ ] Fade-to-black / fade-from-black transitions
-- [ ] Loading screen for district transitions (simple progress bar + scripture quote)
-- [ ] `GameManager` handles scene stacking (gameplay + HUD + pause overlay)
+### 1.5 Character Selection Screen
+- [x] Triggered when selecting "New Game".
+- [x] Simple UI offering two choices: Male Pilgrim or Female Pilgrim.
+- [x] Saves the choice to `GameManager` or `SaveManager` for use in spawning the correct player prefab.
+- [x] "Confirm" button to begin the Baptism prologue.
+- [x] "Back" button to return to the Title Screen.
+
+### 1.6 Scene Transition System
+- [x] Fade-to-black / fade-from-black transitions
+- [x] Loading screen for district transitions (simple progress bar + scripture quote)
+- [x] `GameManager` handles scene stacking (gameplay + HUD + pause overlay)
 
 ---
 
@@ -744,8 +751,8 @@ Build districts in story order:
 ## Phase 19 — Visual Effects & Shaders
 
 ### 19.1 The Veil Effect
-- [ ] Shader for Mundane Layer (desaturation, muted tones, slight blur)
-- [ ] Shader for Spiritual Layer (vibrant Gothic palette, contrast boost)
+- [ ] Shader for Mundane Layer (desaturation, muted tones, slight blur over the modern city)
+- [ ] Shader for Spiritual Layer (applies vibrant Gothic palette and heavy ink lines over modern structures without changing their fundamental modern shape)
 - [ ] Transition shader (Baptism): dramatic color flood effect
 - [ ] Sanctified area shader: warm candlelight tones, golden overlay
 
@@ -775,13 +782,14 @@ Build districts in story order:
 
 > Replace all placeholders with final art. This phase runs in parallel with later development phases once style is locked.
 
-### 20.1 Character Art
-- [ ] Pilgrim (8-direction sprites or animation tree): idle, walk, dash, attack combo, hurt, death, channel, abilities
+### 20.1 Character Art (Modern Setting, Gothic Style)
+- [ ] Pilgrim Male (8-direction sprites or animation tree): idle, walk, dash, attack combo, hurt, death, channel, abilities
+- [ ] Pilgrim Female (8-direction sprites or animation tree): idle, walk, dash, attack combo, hurt, death, channel, abilities
 - [ ] Guardian Angel: hover idle, dart block, hint gesture, boss interactions
 - [ ] Tempter Demon: lurk idle, surge forward (death), whisper gesture
-- [ ] Father Elias: idle, dialogue poses
-- [ ] Parish NPCs: vendor, sacristan, spiritual director, quest givers (idle + dialogue)
-- [ ] Freed souls: generic civilian variants (walk to safety, Parish ambient)
+- [ ] Father Elias: idle, dialogue poses (modern priest attire with Gothic stylization)
+- [ ] Parish NPCs: vendor, sacristan, spiritual director, quest givers (idle + dialogue, modern clothing)
+- [ ] Freed souls: generic civilian variants (modern citizens: suits, hoodies, workwear, etc., walk to safety, Parish ambient)
 
 ### 20.2 Enemy Art
 - [ ] Per-district Lesser Pure Demon variants (7 districts)
@@ -790,9 +798,9 @@ Build districts in story order:
 - [ ] Captive Human variants (chained, parasited, sludge-trapped)
 - [ ] 7 Archdemon boss sprites with multi-phase visual changes
 
-### 20.3 Environment Art
-- [ ] Tileset per district (7 + Parish + transition zones)
-- [ ] Environmental decorations per district
+### 20.3 Environment Art (Modern Setting, Gothic Style)
+- [ ] Tileset per district (7 + Parish + transition zones). Must clearly depict modern locations (suburbs, malls, skyscrapers, factories) using the stained-glass/heavy-ink style.
+- [ ] Environmental decorations per district (modern cars, lampposts, neon signs, chain-link fences, overlaid with spiritual corruption)
 - [ ] Gate visuals (fog, toxic, chasm, mirror, madness, sealed)
 - [ ] Interactive objects: Priest Checkpoint, Eucharist Node, Gospel Font, Scripture Drop pickup, Sacred Relic shrine
 - [ ] Parish 3-stage visual assets
